@@ -12,7 +12,6 @@ import java.lang.reflect.Method;
 
 /**
  * @author itoak
- * @date 2019-10-30
  */
 @Aspect
 public class TimeConsumingAspect {
