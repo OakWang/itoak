@@ -6,8 +6,12 @@
 
     <groupId>cn.itoak</groupId>
     <artifactId>itoak</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
+
+    <name>itoak</name>
+    <description>Utils for Java Engineer</description>
+    <url>https://github.com/OakWang/itoak</url>
 
     <licenses>
         <license>
@@ -100,11 +104,6 @@
     </properties>
 
     <dependencies>
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>2.2.0.RELEASE</version>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
