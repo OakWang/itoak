@@ -6,15 +6,13 @@
 
     <groupId>cn.itoak</groupId>
     <artifactId>itoak</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <licenses>
         <license>
-            <name>Server Side Public License</name>
-            <url>https://www.mongodb.com/licensing/server-side-public-license</url>
-            <distribution>repo</distribution>
-            <comments>A not business-friendly OSS license</comments>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
         </license>
     </licenses>
 
