@@ -12,7 +12,6 @@ import java.util.Objects;
  * 校验枚举项是否合法，如RED是否属于ColorEnum中定义的。
  *
  * @author wangdonglei
- * @date 2019-10-15
  */
 public class EnumValidator {
 
@@ -22,6 +21,7 @@ public class EnumValidator {
      * @param targetField 目标变量
      * @param fieldValue  变量值
      * @param clazz       枚举类型Class
+     * @param <T>         入参类型
      * @return 字段值是否合法
      */
     @SuppressWarnings("unchecked")
@@ -48,6 +48,7 @@ public class EnumValidator {
      *
      * @param targetItem 枚举项
      * @param clazz      枚举类型Class
+     * @param <T>        入参类型
      * @return 字段是否合法
      */
     public static <T> boolean checkField(String targetItem, Class<T> clazz) {

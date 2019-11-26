@@ -29,8 +29,7 @@ public class TimeConsumingAspect {
         long start = System.currentTimeMillis();
         Object object = joinPoint.proceed();
         if (logger.isInfoEnabled()) {
-            String fullName = joinPoint.getTarget().getClass().getName();
-            String className = fullName.substring(fullName.lastIndexOf(".") + 1);
+            String className = joinPoint.getTarget().getClass().getName();
             logger.info("Method completed in {} ms [{}.{}]", (System.currentTimeMillis() - start), className, method.getName());
         }
         return object;

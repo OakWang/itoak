@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
  * 单个对象属性拷贝、列表对象拷贝
  *
  * @author itoak
- * @date 2019-10-17
  */
 public class CopierUtil {
 
