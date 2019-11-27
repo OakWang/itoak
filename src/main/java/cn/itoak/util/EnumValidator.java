@@ -11,7 +11,7 @@ import java.util.Objects;
  * 校验枚举项成员变量值是否合法，如code的值；
  * 校验枚举项是否合法，如RED是否属于ColorEnum中定义的。
  *
- * @author wangdonglei
+ * @author itoak
  */
 public class EnumValidator {
 
