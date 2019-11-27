@@ -18,4 +18,5 @@ public class AutoConfigure {
     public TimeConsumingAspect timeConsumingAspect(){
         return new TimeConsumingAspect();
     }
+
 }
