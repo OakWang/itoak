@@ -26,6 +26,7 @@
 ### 1.函数耗时统计
 
 - 说明
+
 函数耗时统计功能默认是开启状态，使用注解可直接使用。如若要关闭该功能，可在配置文件中增加以下配置：
 ```
 cn.itoak.time.consuming.enabled=false
@@ -45,7 +46,7 @@ public class PerformanceImpl implements Performance {
 
 - 结果
 ```
-892  INFO 59499 --- [nio-8088-exec-1] cn.itoak.aspect.TimeConsumingAspect      : Method completed in 17 ms [cn.itoak.tranquility.service.impl.PerformanceImpl.perform]
+Method completed in 17 ms [cn.itoak.tranquility.service.impl.PerformanceImpl.perform]
 ```
 
 ### 2.对象属性拷贝工具类
