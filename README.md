@@ -3,6 +3,16 @@
 ## 简介
 整理收集平时工作中常用实用的工具
 
+## 快速安装
+使用Maven依赖即可：
+```
+<dependency>
+    <groupId>cn.itoak</groupId>
+    <artifactId>itoak</artifactId>
+    <version>0.0.2</version>
+</dependency>
+```
+
 ## 功能表
 
 |序号|名称|说明|对应版本|时间|
@@ -14,6 +24,12 @@
 ## 使用示例
 
 ### 1.函数耗时统计
+
+- 说明
+函数耗时统计功能默认是开启状态，使用注解可直接使用。如若要关闭该功能，可在配置文件中增加以下配置：
+```
+cn.itoak.time.consuming.enabled=false
+```
 
 - 使用
 ```java
