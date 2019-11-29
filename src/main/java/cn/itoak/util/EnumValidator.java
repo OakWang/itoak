@@ -51,7 +51,7 @@ public class EnumValidator {
      * @param <T>        入参类型
      * @return 字段是否合法
      */
-    public static <T> boolean checkField(String targetItem, Class<T> clazz) {
+    public static <T> boolean checkItem(String targetItem, Class<T> clazz) {
         if (clazz == null || !clazz.isEnum() || StringUtils.isEmpty(targetItem)) {
             return false;
         }

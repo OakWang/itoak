@@ -99,7 +99,10 @@ public class EnumValidatorTest {
         Boolean aboolean = EnumValidator.checkFieldValue("code", 1, ColorEnum.class);//true
 
         //校验枚举项是否合法
+        //0.0.2 版本
         Boolean cboolean = EnumValidator.checkField("RED", ColorEnum.class);//true
+        //0.0.3 版本
+        Boolean dboolean = EnumValidator.checkItem("RED", ColorEnum.class);//true
     }
 }
 ```
