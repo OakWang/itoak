@@ -19,7 +19,7 @@
 |:----:|:----|:----|:----|:----|
 |1|[函数耗时统计](https://github.com/OakWang/itoak/blob/master/README.md#1%E5%87%BD%E6%95%B0%E8%80%97%E6%97%B6%E7%BB%9F%E8%AE%A1)|新增注解@TimeConsuming，在指定函数上加上该注解，即可打印该函数耗时|0.0.1+|2019-11-23|
 |2|[对象属性拷贝工具类](https://github.com/OakWang/itoak/blob/master/README.md#2%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E6%8B%B7%E8%B4%9D%E5%B7%A5%E5%85%B7%E7%B1%BB)|新增CopierUtil工具类，封装对象属性拷贝工具BeanCopier，支持单个对象属性拷贝，列表拷贝等|0.0.2+|2019-11-26|
-|3|[枚举校验器](https://github.com/OakWang/itoak#3%E6%9E%9A%E4%B8%BE%E6%A0%A1%E9%AA%8C%E5%99%A8)|新增枚举校验器EnumValidator，可对枚举成员变量的值做合法性校验；可对枚举项进行合法性校验|0.0.2+|2019-11-26|
+|3|[枚举校验器](https://github.com/OakWang/itoak/blob/master/README.md#3%E6%9E%9A%E4%B8%BE%E6%A0%A1%E9%AA%8C%E5%99%A8)|新增枚举校验器EnumValidator，可对枚举成员变量的值做合法性校验；可对枚举项进行合法性校验|0.0.2+|2019-11-26|
 
 ## 使用示例
 
