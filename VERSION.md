@@ -8,3 +8,4 @@
 
 ### 0.0.3
 - 修复EnumValidator工具类函数歧义命名（checkField rename to checkItem）。*2019-11-29*
+- 增强注解@TimeConsuming，使其支持DAO层函数耗时统计。*2019-12-19*

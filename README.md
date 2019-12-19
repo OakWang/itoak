@@ -34,6 +34,9 @@ cn.itoak.time.consuming.enabled=false
 
 - 使用
 ```java
+/**
+* 普通类函数上使用示例
+*/
 @Service
 public class PerformanceImpl implements Performance {
     @Override
@@ -41,6 +44,15 @@ public class PerformanceImpl implements Performance {
     public void perform() {
         System.out.println("演员正在表演...");
     }
+}
+
+/**
+* DAO层接口函数使用示例
+*/
+@Mapper
+public interface PerDAO {
+    @TimeConsuming
+    Per selectById(Long id);
 }
 ```
 
