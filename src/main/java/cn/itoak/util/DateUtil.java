@@ -81,20 +81,6 @@ public class DateUtil {
     }
 
     /**
-     * 根据DateTimeFormatter，格式化日期
-     *
-     * @param instant   待格式化日期
-     * @param formatter 格式化
-     * @return 给定日期、时间的格式化输出
-     */
-    public static String format(Instant instant, DateTimeFormatter formatter) {
-        Objects.requireNonNull(instant, "instant");
-        return LocalDateTime
-                .ofInstant(instant, ZoneId.systemDefault())
-                .format(formatter);
-    }
-
-    /**
      * 返回默认格式的指定日期时间的字符串
      * 格式：yyyy-MM-dd HH:mm:ss
      *
@@ -103,17 +89,6 @@ public class DateUtil {
      */
     public static String formatDateTime(Date date) {
         return format(date, DATE_TIME_FORMATTER);
-    }
-
-    /**
-     * 返回默认格式的指定日期时间的字符串
-     * 格式：yyyy-MM-dd HH:mm:ss
-     *
-     * @param instant 指定日期
-     * @return 日期时间字符串
-     */
-    public static String formatDateTime(Instant instant) {
-        return format(instant, DATE_TIME_FORMATTER);
     }
 
     /**
@@ -128,17 +103,6 @@ public class DateUtil {
     }
 
     /**
-     * 返回默认格式的指定日期的字符串
-     * 格式：yyyy-MM-dd
-     *
-     * @param instant 指定日期
-     * @return 日期字符串
-     */
-    public static String formatDate(Instant instant) {
-        return format(instant, DATE_FORMATTER);
-    }
-
-    /**
      * 返回默认格式的指定时间的字符串
      * 格式：HH:mm:ss
      *
@@ -150,17 +114,6 @@ public class DateUtil {
     }
 
     /**
-     * 返回默认格式的指定时间的字符串
-     * 格式：HH:mm:ss
-     *
-     * @param instant 指定时间
-     * @return 时间字符串
-     */
-    public static String formatTime(Instant instant) {
-        return format(instant, TIME_FORMATTER);
-    }
-
-    /**
      * 解析日期时间
      *
      * @param date      待解析日期时间字符串
@@ -168,19 +121,20 @@ public class DateUtil {
      * @return 日期
      */
     public static Date parseDateTime(String date, DateTimeFormatter formatter) {
-        return Date.from(parseDateTime2Instant(date, formatter));
+        LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+        Instant instant = localDateTime.toInstant(ZoneOffset.of("+8"));
+        return Date.from(instant);
     }
 
     /**
-     * 解析日期时间
+     * 按默认格式解析日期时间
+     * 格式：yyyy-MM-dd HH:mm:ss
      *
-     * @param date      待解析日期时间字符串
-     * @param formatter 格式化
+     * @param date 待解析日期时间字符串
      * @return 日期
      */
-    public static Instant parseDateTime2Instant(String date, DateTimeFormatter formatter) {
-        LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
-        return localDateTime.toInstant(ZoneOffset.of("+8"));
+    public static Date parseDateTime(String date) {
+        return parseDateTime(date, DATE_TIME_FORMATTER);
     }
 
     /**
@@ -191,41 +145,47 @@ public class DateUtil {
      * @return 日期
      */
     public static Date parseDate(String date, DateTimeFormatter formatter) {
-        return Date.from(parseDate2Instant(date, formatter));
+        LocalDate localDate = LocalDate.parse(date, formatter);
+        LocalDateTime localDateTime = LocalDateTime.of(localDate, LocalTime.MIN);
+        Instant instant = localDateTime.toInstant(ZoneOffset.of("+8"));
+        return Date.from(instant);
     }
 
     /**
-     * 解析日期
+     * 按默认格式解析日期
+     * 格式：yyyy-MM-dd
      *
-     * @param date      待解析日期字符串
-     * @param formatter 格式化
+     * @param date 待解析日期字符串
      * @return 日期
      */
-    public static Instant parseDate2Instant(String date, DateTimeFormatter formatter) {
-        LocalDate localDate = LocalDate.parse(date, formatter);
-        LocalDateTime localDateTime = LocalDateTime.of(localDate, LocalTime.MIN);
-        return localDateTime.toInstant(ZoneOffset.of("+8"));
+    public static Date parseDate(String date) {
+        return parseDate(date, DATE_FORMATTER);
     }
 
 
     public static void main(String[] args) {
+        // 当前时间字符串
 //        System.out.println(current(DATE_TIME_FORMATTER));
 //        System.out.println(current(DATE_FORMATTER));
 //        System.out.println(current(TIME_FORMATTER));
 //        System.out.println(currentDateTime());
 //        System.out.println(currentDate());
+//        System.out.println(currentTime());
+
+        // 指定时间字符串
 //        System.out.println(format(new Date(), DATE_FORMATTER));
 //        System.out.println(format(new Date(), TIME_FORMATTER));
 //        System.out.println(format(new Date(), DATE_TIME_FORMATTER));
 //        System.out.println(formatDate(new Date()));
 //        System.out.println(formatTime(new Date()));
 //        System.out.println(formatDateTime(new Date()));
-//        System.out.println(formatDate(Instant.now()));
-//        System.out.println(formatTime(Instant.now()));
-//        System.out.println(formatDateTime(Instant.now()));
+
+        // 解析时间字符串 -> 时间
 //        System.out.println(parseDateTime("2019-12-19 23:05:18", DATE_TIME_FORMATTER));
-//        System.out.println(parseDateTime2Instant("2019-12-19 23:05:18", DATE_TIME_FORMATTER));
 //        System.out.println(parseDate("2019-12-19", DATE_FORMATTER));
-//        System.out.println(parseDate2Instant("2019-12-19", DATE_FORMATTER));
+//        System.out.println(parseDateTime("2019-12-19 23:05:18"));
+//        System.out.println(parseDate("2019-12-19"));
+
+
     }
 }
