@@ -50,6 +50,7 @@
         <aspectj.version>1.9.4</aspectj.version>
         <slf4j.version>1.7.28</slf4j.version>
         <cglib.version>3.3.0</cglib.version>
+        <dozer.version>5.5.1</dozer.version>
     </properties>
 
     <dependencies>
@@ -87,6 +88,12 @@
             <artifactId>cglib</artifactId>
             <version>${cglib.version}</version>
         </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>${dozer.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

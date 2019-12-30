@@ -16,7 +16,6 @@ import java.util.Objects;
  * DateTimeFormatter 代替 SimpleDateFormat
  *
  * @author itoak
- * @date 2019-12-19
  */
 public class DateUtil {
 

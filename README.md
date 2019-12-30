@@ -18,8 +18,9 @@
 |序号|名称|说明|对应版本|时间|
 |:----:|:----|:----|:----|:----|
 |1|[函数耗时统计](https://github.com/OakWang/itoak#1%E5%87%BD%E6%95%B0%E8%80%97%E6%97%B6%E7%BB%9F%E8%AE%A1)|新增注解@TimeConsuming，在指定函数上加上该注解，即可打印该函数耗时|0.0.1+|2019-11-23|
-|2|[对象属性拷贝工具类](https://github.com/OakWang/itoak#2%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E6%8B%B7%E8%B4%9D%E5%B7%A5%E5%85%B7%E7%B1%BB)|新增CopierUtil工具类，封装对象属性拷贝工具BeanCopier，支持单个对象属性拷贝，列表拷贝等|0.0.2+|2019-11-26|
+|2|[对象属性浅拷贝工具类](https://github.com/OakWang/itoak#2%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E6%8B%B7%E8%B4%9D%E5%B7%A5%E5%85%B7%E7%B1%BB)|新增CopierUtil浅拷贝工具类，封装对象属性拷贝工具BeanCopier，支持单个对象属性拷贝，列表拷贝等|0.0.2+|2019-11-26|
 |3|[枚举校验器](https://github.com/OakWang/itoak#3%E6%9E%9A%E4%B8%BE%E6%A0%A1%E9%AA%8C%E5%99%A8)|新增枚举校验器EnumValidator，可对枚举成员变量的值做合法性校验；可对枚举项进行合法性校验|0.0.2+|2019-11-26|
+|4|[对象属性深拷贝工具类]()|新增MapperUtil深拷贝工具类，封装对象属性拷贝工具DozerBeanMapper，支持单个对象属性拷贝，列表拷贝等|0.0.3+|2019-12-30|
 
 ## 使用示例
 
@@ -65,7 +66,7 @@ public interface PerDAO {
 Method completed in 17 ms [cn.itoak.tranquility.service.impl.PerformanceImpl.perform]
 ```
 
-### 2.对象属性拷贝工具类
+### 2.对象属性浅拷贝工具类
 
 - 使用
 ```java
@@ -119,6 +120,25 @@ public class EnumValidatorTest {
         Boolean cboolean = EnumValidator.checkField("RED", ColorEnum.class);//true
         //0.0.3+ 版本
         Boolean dboolean = EnumValidator.checkItem("RED", ColorEnum.class);//true
+    }
+}
+```
+
+### 4.对象属性深拷贝工具类
+
+- 使用
+```java
+public class MapperUtilTest {
+    public static void main(String[] args) {
+        
+        //单个对象属性拷贝
+        OriginBean originBean = new OriginBean();
+        TargetBean t = MapperUtil.copyProperties(originBean, TargetBean.class);
+
+        //列表对象拷贝
+        List<OriginBean> list = new ArrayList<>();
+        list.add(originBean);
+        List<TargetBean> list1 = MapperUtil.copyObjects(list, TargetBean.class);
     }
 }
 ```
